@@ -2,9 +2,14 @@
 
 Stupidly simple Smart DNS proxy to watch Netflix.
 
-## Example
+## you can build this with 
 ```bash
-docker run -it --cap-add=NET_ADMIN -p 53:53/udp -p 443:443 -p 80:80 -e IP=127.0.0.1 mkrou/smartdns
+docker build -t dns-proxy .
+```
+
+## you can run the script with this code
+```bash
+docker run -d --name dns-proxy-container -e IP=<your_public_ip> -p 53:53/udp -p 80:80 -p 443:443 dns-proxy
 ```
 
 ## Variables
